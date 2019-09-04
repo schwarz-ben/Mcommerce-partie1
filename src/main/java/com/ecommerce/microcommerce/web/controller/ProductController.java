@@ -48,6 +48,11 @@ public class ProductController {
         return produitsFiltres;
     }
 
+    // Liste des produits triée sur le nom de produit
+    @GetMapping(value = "/Produits-asc")
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+        return productDao.findAllProductsByOrderByNomAsc();
+    }
 
     //Récupérer un produit par son Id
     @ApiOperation(value = "Récupère un produit grâce à son ID à condition que celui-ci soit en stock!")

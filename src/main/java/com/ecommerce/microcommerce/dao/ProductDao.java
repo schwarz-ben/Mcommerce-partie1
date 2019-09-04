@@ -11,6 +11,12 @@ import java.util.List;
 @Repository
 public interface ProductDao extends JpaRepository<Product, Integer> {
 
+    List<Product> findAllProductsByOrderByNomAsc();
+
+    /*List<Product> findAllOrderByNomAsc(){
+        return findAll(new Sort(Sort.Direction.ASC,"nom"));
+    };*/
+
     Product findById(int id);
 
     List<Product> findByPrixGreaterThan(int prixLimit);
